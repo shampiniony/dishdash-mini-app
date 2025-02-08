@@ -80,7 +80,7 @@ export const LobbyCard = ({ id }: LobbyCardProps) => {
     <div
       onClick={() => {
         resetStore();
-        setState(lobby?.state ?? 'lobby');
+        setState(lobby?.state ? 'results' : 'lobby');
         navigate(`/${id}`);
       }}
       className={`${lobby ? '' : 'animate-pulse'} cursor-pointer h-[90px] mx-auto p-3 px-4 flex pointer-events-auto w-full bg-secondary rounded-xl`}

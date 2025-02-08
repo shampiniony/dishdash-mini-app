@@ -10,7 +10,7 @@ import { useEffect } from 'react';
 export type SwipeType = 'like' | 'dislike';
 
 const GameCards = () => {
-  const { cards } = useLobbyStore();
+  const { cards, setState } = useLobbyStore();
 
   const {
     disableVerticalSwipes,
@@ -55,6 +55,9 @@ const GameCards = () => {
 
   return (
     <div className="flex min-h-full h-screen flex-col justify-center items-center overflow-hidden">
+      <div onClick={() => setState('results')} className='absolute top-5'>
+        results
+      </div>
       <div className="flex flex-col gap-6 w-full xs:w-[420px] items-center justify-center relative z-10">
         <div className="w-full aspect-[21/30] max-w-[90vw] relative z-10">
           <AnimatePresence>

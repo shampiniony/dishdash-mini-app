@@ -8,7 +8,9 @@ class MatchEvent extends Event {
     console.log(data);
 
     const { setMatchCard } = getMatchStoreMethods();
-    const { setState } = getLobbyStoreMethods();
+    const { setState, state } = getLobbyStoreMethods();
+
+    if (state == 'results') return; 
 
     setState('match');
     setMatchCard({
